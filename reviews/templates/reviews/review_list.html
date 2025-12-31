@@ -1,0 +1,62 @@
+{% load static %} <!DOCTYPE html>
+<html>
+<head>
+    <title>Libroaria Archive</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Libroaria Archive</h1>
+
+    <div class="post-form">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">レビューを保存する</button>
+        </form>
+    </div>
+
+    <h2>香りの記録一覧</h2>
+    {% for review in reviews %}
+        <div class="review-card">
+            <h3>{{ review.perfume_name }}</h3>
+            
+            {% if review.perfume_name == "純白の物語" %}
+        <img src="{% static 'images/shinpaku.jpg' %}" class="perfume-img">
+           {% elif review.perfume_name == "夜明けの読書" %}
+    <img src="{% static 'images/yoake.jpg' %}" class="perfume-img">
+{% elif review.perfume_name == "秘密の書斎" %}
+    <img src="{% static 'images/himitsu.jpg' %}" class="perfume-img">
+{% elif review.perfume_name == "雨の図書室" %}
+    <img src="{% static 'images/ame.jpg' %}" class="perfume-img">
+{% elif review.perfume_name == "月夜の詩集" %}
+    <img src="{% static 'images/tsukiyo.jpg' %}" class="perfume-img">
+{% elif review.perfume_name == "湖畔の画集" %}
+    <img src="{% static 'images/kohan.jpg' %}" class="perfume-img">
+{% elif review.perfume_name == "恋の序章" %}
+    <img src="{% static 'images/koi.jpg' %}" class="perfume-img">
+{% elif review.perfume_name == "夕暮れの物語" %}
+    <img src="{% static 'images/yugure.jpg' %}" class="perfume-img">
+{% elif review.perfume_name == "葡萄色の日記" %}
+    <img src="{% static 'images/ebiiro.jpg' %}" class="perfume-img">
+{% elif review.perfume_name == "飴色の文学" %}
+    <img src="{% static 'images/ameiro.jpg' %}" class="perfume-img">
+{% endif %}
+
+            <p style="white-space: pre-wrap; margin: 15px 0; line-height: 1.6;">{{ review.content }}</p>
+            
+            <a href="https://libroaria.com/pages/perfume" target="_blank" class="buy-link">公式サイトで詳細を見る</a>
+            <div style="margin-top: 15px;"><small style="color: #999;">記録日: {{ review.created_at }}</small></div>
+        </div>
+        <form action="{% url 'delete_review' review.pk %}" method="POST" style="margin-top: 20px;">
+    {% csrf_token %}
+    <button type="submit" style="background: none; border: 1px solid #ff4d4d; color: #ff4d4d; width: auto; padding: 5px 15px; font-size: 0.8em; border-radius: 5px;">
+        この記録を消去する
+    </button>
+</form>
+    {% empty %}
+        <p>まだレビューがありません。</p>
+
+    {% endfor %}
+
+</body>
+</html>

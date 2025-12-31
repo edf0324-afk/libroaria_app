@@ -1,0 +1,87 @@
+
+body {
+    background: radial-gradient(circle at center, #001a33 0%, #000810 100%);
+    color: #e0f2f7;
+    font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", serif;
+    margin: 0;
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+
+h1 {
+    text-align: center;
+    color: #4dabf7;
+    font-size: 2.2em;
+    letter-spacing: 0.3em;
+    text-shadow: 0 0 15px rgba(77, 171, 247, 0.5);
+    margin-bottom: 50px;
+}
+
+
+.post-form {
+    max-width: 600px;
+    margin: 0 auto 60px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(77, 171, 247, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+
+.review-card {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    background: rgba(0, 30, 60, 0.4);
+    padding: 40px;
+    border-radius: 20px;
+    border-left: 4px solid #4dabf7;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: all 0.5s ease;
+}
+
+.review-card:hover {
+    box-shadow: 0 0 20px rgba(77, 171, 247, 0.3);
+    background: rgba(0, 40, 80, 0.5);
+}
+
+
+.perfume-img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 10px;
+    margin: 20px 0;
+    box-shadow: 0 0 25px rgba(77, 171, 247, 0.2);
+    filter: brightness(0.9) contrast(1.1);
+}
+
+
+select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(77, 171, 247, 0.3);
+    color: white;
+    border-radius: 8px;
+}
+
+
+button {
+    background: linear-gradient(135deg, #004488, #001a33);
+    color: #4dabf7;
+    border: 1px solid #4dabf7;
+    padding: 12px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}
+
+button:hover {
+    background: #4dabf7;
+    color: #000810;
+}
